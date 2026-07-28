@@ -1,0 +1,19 @@
+# FastF1 local cache — large, regenerable via 01_data_collection.ipynb
+f1_cache/
+
+# Jupyter autosave checkpoints
+.ipynb_checkpoints/
+
+# Collected/derived data — regenerable, not meant to be committed (see README)
+data/raw/
+data/processed/
+data/interim/
+
+# Python
+__pycache__/
+*.pyc
+.ipynb_checkpoints
+
+# OS
+.DS_Store
+Thumbs.db

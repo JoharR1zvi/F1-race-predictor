@@ -1,0 +1,10 @@
+pandas
+numpy
+matplotlib
+seaborn
+scipy
+requests
+fastf1
+scikit-learn
+xgboost
+jupyter
