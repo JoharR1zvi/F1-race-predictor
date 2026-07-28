@@ -4,6 +4,9 @@ f1_cache/
 # Jupyter autosave checkpoints
 .ipynb_checkpoints/
 
+# AI-assistant project context — internal notes, not for the public repo
+AGENT/
+
 # Collected/derived data — regenerable, not meant to be committed (see README)
 data/raw/
 data/processed/
