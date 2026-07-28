@@ -1,4 +1,4 @@
-# 🏎️ F1 Race Outcome Predictor
+#  F1 Race Outcome Predictor
 
 A machine learning project that predicts Formula 1 race outcomes
 using historical race data, telemetry, and weather conditions.
