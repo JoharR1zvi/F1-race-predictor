@@ -8,3 +8,5 @@ fastf1
 scikit-learn
 xgboost
 jupyter
+streamlit
+joblib
