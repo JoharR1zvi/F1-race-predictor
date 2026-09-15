@@ -709,6 +709,31 @@ with performance_tab:
                 "comparable."
             )
 
+        shap_summary_path = FIGURES_DIR / "model_08_shap_summary.png"
+        shap_waterfall_path = FIGURES_DIR / "model_09_shap_waterfall_example.png"
+        if shap_summary_path.exists() or shap_waterfall_path.exists():
+            st.markdown("**A closer look: SHAP values**")
+            st.caption(
+                "The bar chart above averages across every prediction. "
+                "SHAP explains predictions individually instead, one dot "
+                "per driver-race, colored by whether that feature's value "
+                "was high or low."
+            )
+            shap_col1, shap_col2 = st.columns(2)
+            if shap_summary_path.exists():
+                shap_col1.image(str(shap_summary_path), use_container_width=True)
+                shap_col1.caption(
+                    "Every prediction in the 2025 test set at once. Red "
+                    "dots on the right mean a high value for that feature "
+                    "pushed the prediction toward a points finish."
+                )
+            if shap_waterfall_path.exists():
+                shap_col2.image(str(shap_waterfall_path), use_container_width=True)
+                shap_col2.caption(
+                    "One real prediction, broken down: exactly which "
+                    "features pushed it up or down, and by how much."
+                )
+
     with podium_perf_tab:
         st.dataframe(loaded["on_podium"]["comparison"], use_container_width=True)
         st.caption(
