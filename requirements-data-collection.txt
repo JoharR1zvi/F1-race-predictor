@@ -1,0 +1,7 @@
+# Only needed for 01_data_collection.ipynb -- fastf1 requires pandas<3.0,
+# which conflicts with the pandas==3.0.5 the rest of this project (the
+# dashboard, notebooks 02-04) is pinned to in requirements.txt. Install
+# this in a SEPARATE virtual environment from the main one, not layered
+# on top of it -- installing both together in one environment is exactly
+# the conflict this file exists to avoid.
+fastf1==3.8.3

@@ -121,9 +121,17 @@ regenerable). To rebuild everything from scratch, run the notebooks in
 pulls from all 3 APIs and takes ~2 hours on a first run because of rate
 limits (instant after caching).
 
-Note: `requirements.txt` pins the versions notebooks 02-04 and the
-dashboard are actually tested against, including `pandas==3.0.5`.
-`fastf1` (only used by `01_data_collection.ipynb`) officially supports
-`pandas<3.0` as of this writing -- if re-running data collection breaks
-on the pinned pandas version, try it in a separate environment with an
-older pandas instead of changing the version everything else relies on.
+`01_data_collection.ipynb` needs `fastf1`, which isn't in the main
+`requirements.txt` -- it requires `pandas<3.0`, which conflicts with the
+`pandas==3.0.5` the dashboard and notebooks 02-04 are pinned to. Install
+it in a **separate virtual environment** from the main one, on its own
+(not combined with `requirements.txt` -- that would reintroduce the exact
+conflict this avoids; `fastf1` pulls in its own compatible pandas/numpy
+automatically):
+```bash
+python -m venv datacollection-env
+datacollection-env\Scripts\activate  # or source .../bin/activate on macOS/Linux
+pip install -r requirements-data-collection.txt jupyter
+```
+Everything else (the dashboard, notebooks 02-04, the tests) only ever
+needs plain `requirements.txt`.

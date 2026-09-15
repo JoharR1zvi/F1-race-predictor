@@ -1,14 +1,13 @@
 pandas==3.0.5
-numpy==2.2.6
+numpy==2.3.5
 matplotlib==3.8.4
 seaborn==0.13.2
-scipy==1.13.0
+scipy==1.18.1
 requests==2.31.0
-fastf1==3.8.3
 scikit-learn==1.4.2
 xgboost==3.3.0
 jupyter
 streamlit==1.61.1
 joblib==1.4.2
-shap==0.52.0
+shap==0.50.0
 pytest==9.1.1
