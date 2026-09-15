@@ -1,5 +1,5 @@
 {
-  "model_name": "XGBoost",
+  "model_name": "XGBoost (tuned)",
   "target": "points_finish",
   "numeric_features": [
     "grid_position",
@@ -72,6 +72,6 @@
     "THA",
     "USA"
   ],
-  "test_accuracy": 0.7453027139874739,
-  "test_f1": 0.7393162393162394
+  "test_accuracy": 0.755741127348643,
+  "test_f1": 0.7505330490405118
 }
