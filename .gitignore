@@ -6,6 +6,7 @@ f1_cache/
 
 # AI-assistant project context — internal notes, not for the public repo
 AGENT/
+CLAUDE.md
 
 # Collected/derived data — regenerable, not meant to be committed (see README)
 data/raw/

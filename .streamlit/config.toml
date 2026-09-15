@@ -1,0 +1,10 @@
+# Streamlit theme -- reuses the same dark F1 palette as the notebook plots
+# (see STYLE dict in 02_Exploratory_Data_Analysis.ipynb Section 1), so the
+# dashboard looks like part of the same project instead of a generic app.
+[theme]
+base = "dark"
+backgroundColor = "#0f0f0f"
+secondaryBackgroundColor = "#1a1a1a"
+primaryColor = "#e8002d"
+textColor = "#ffffff"
+font = "sans serif"
