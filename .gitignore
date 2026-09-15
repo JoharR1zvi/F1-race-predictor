@@ -17,6 +17,7 @@ data/interim/
 __pycache__/
 *.pyc
 .ipynb_checkpoints
+.pytest_cache/
 
 # OS
 .DS_Store
