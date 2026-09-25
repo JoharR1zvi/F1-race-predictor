@@ -8,7 +8,7 @@ Pick any driver on the current F1 grid, tell it where they're starting the
 race, and it predicts three things: will they score points (finish in the
 top 10), will they reach the podium (top 3), and roughly where will they
 finish. It learned these patterns from 4 seasons of real race data
-(2022-2025) — who started where, how fast they qualified, what the weather
+(2022-2025): who started where, how fast they qualified, what the weather
 was like, and how well each driver and team had been performing recently.
 
 The interesting part isn't just "it makes a prediction." Three different
@@ -19,7 +19,7 @@ where it struggles: predicting a driver's *exact* finishing position is
 genuinely hard, a lap-1 crash isn't something any spreadsheet can see
 coming, and the results say so plainly instead of hiding a weak number.
 
-**Try it:** pick a real driver, hit Predict, see what happens — see "Run
+**Try it:** pick a real driver, hit Predict, see what happens. See "Run
 the Dashboard" below.
 
 ## Project Overview
@@ -27,9 +27,9 @@ Built as part of my MSc Data Science & Machine Learning at
 Carl von Ossietzky Universität Oldenburg.
 
 ## Data Sources
-- **Jolpica API** — Race results, qualifying times, pit stops (2022–2025)
-- **FastF1** — Lap telemetry, tyre strategy, weather (2022–2025)
-- **OpenF1 API** — Real-time race data (2023–2025)
+- **Jolpica API**: Race results, qualifying times, pit stops (2022-2025)
+- **FastF1**: Lap telemetry, tyre strategy, weather (2022-2025)
+- **OpenF1 API**: Real-time race data (2023-2025)
 
 ## Project Structure
 ```
@@ -79,6 +79,31 @@ f1_cache/                         FastF1 local cache (do not delete, do not comm
 
 ## Tech Stack
 Python · Pandas · FastF1 · Scikit-learn · XGBoost · SHAP · Matplotlib · Streamlit · pytest
+
+## Results
+
+| Target | Winning model | Key metric |
+|---|---|---|
+| Points finish (top 10) | XGBoost (tuned) | F1 0.751, ROC-AUC 0.826 |
+| Podium (top 3) | XGBoost | F1 0.748, ROC-AUC 0.946 |
+| Finish position (1-20) | Linear Regression | RMSE 4.31, R² 0.44 |
+
+Four seasons, 92 races, 1,838 driver-race rows, 22 engineered features, four models
+compared per target on a fully held-out 2025 season, not a random split.
+
+<p align="center">
+  <img src="data/figures/model_02_roc_comparison.png" width="48%" alt="ROC curve comparison across models" />
+  <img src="data/figures/model_08_shap_summary.png" width="48%" alt="SHAP summary plot showing which features drive predictions" />
+</p>
+
+<p align="center">
+  <img src="data/figures/model_07_finish_position_predicted_vs_actual.png" width="60%" alt="Predicted vs actual finish position scatter plot" />
+</p>
+
+The finish-position chart above is the honest one: predictions cluster toward the
+middle of the grid even for drivers who actually finished 1st or 20th. Nothing knowable
+before lights-out can see a lap-1 crash coming, and the model says so rather than
+pretending otherwise.
 
 ## How to Run
 ```bash
