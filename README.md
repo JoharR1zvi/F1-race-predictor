@@ -8,7 +8,7 @@ Pick any driver on the current F1 grid, tell it where they're starting the
 race, and it predicts three things: will they score points (finish in the
 top 10), will they reach the podium (top 3), and roughly where will they
 finish. It learned these patterns from 4 seasons of real race data
-(2022-2025): who started where, how fast they qualified, what the weather
+(2022-2025) - who started where, how fast they qualified, what the weather
 was like, and how well each driver and team had been performing recently.
 
 The interesting part isn't just "it makes a prediction." Three different
