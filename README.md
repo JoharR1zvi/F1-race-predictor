@@ -19,8 +19,9 @@ where it struggles: predicting a driver's *exact* finishing position is
 genuinely hard, a lap-1 crash isn't something any spreadsheet can see
 coming, and the results say so plainly instead of hiding a weak number.
 
-**Try it:** pick a real driver, hit Predict, see what happens. See "Run
-the Dashboard" below.
+**Try it live:** [f1-race-predictor-fuoudv2wdpvhccygmy6cxa.streamlit.app](https://f1-race-predictor-fuoudv2wdpvhccygmy6cxa.streamlit.app/)
+Pick a real driver, hit Predict, see what happens. No install needed. (To
+run it locally instead, see "Run the Dashboard" below.)
 
 ## Project Overview
 Built as part of my MSc Data Science & Machine Learning at
